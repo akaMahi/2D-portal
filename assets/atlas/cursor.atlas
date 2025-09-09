@@ -1,0 +1,10 @@
+images {
+  image: "/assets/cursor/portal_cursor_bl.png"
+}
+images {
+  image: "/assets/cursor/portal_cursor_rng.png"
+}
+images {
+  image: "/assets/cursor/portal_cursor_cnt.png"
+}
+extrude_borders: 2

@@ -1,0 +1,10 @@
+images {
+  image: "/assets/props/portal_box.png"
+}
+images {
+  image: "/assets/props/proj_blue.png"
+}
+images {
+  image: "/assets/props/proj_orange.png"
+}
+extrude_borders: 2

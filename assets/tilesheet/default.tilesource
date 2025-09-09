@@ -1,0 +1,16 @@
+image: "/assets/tilesheet/portal_tilesheet-Sheet.png"
+tile_width: 32
+tile_height: 32
+collision: "/assets/tilesheet/portal_tilesheet-Sheet.png"
+convex_hulls {
+  index: 0
+  count: 4
+  collision_group: ""
+}
+convex_hulls {
+  index: 4
+  count: 4
+  collision_group: "default"
+}
+collision_groups: "default"
+extrude_borders: 2

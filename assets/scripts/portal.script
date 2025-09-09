@@ -1,0 +1,28 @@
+local game = require("assets.scripts.game")
+go.property("color", 0)
+
+function on_message(self, message_id, message, sender)
+	if message_id == hash("trigger_response") and message.enter and not game.tp then
+		if game.blue and game.orange then
+			msg.post(message.other_id, "disable_co")
+			game.tp = true
+			if self.color == 1 then
+				game.portal_color = 1
+				go.set_position(go.get_position(game.orange), message.other_id)
+			else
+				game.portal_color = 2
+				go.set_position(go.get_position(game.blue), message.other_id)
+			end
+			-----------------------------------------
+			if game.blue_dir == game.orange_dir then
+				msg.post(message.other_id, "up")
+			end
+			-----------------------------------------
+			msg.post(message.other_id, "enable_co")
+		end
+	elseif message_id == hash("trigger_response") and not message.enter and game.tp then
+		if game.portal_color ~= self.color then
+			game.tp = false
+		end
+	end
+end

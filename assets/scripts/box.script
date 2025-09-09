@@ -1,0 +1,77 @@
+local function clamp (value, min, max)
+	if value < min then return min
+	elseif value > max then return max
+	else return value
+	end
+end
+
+local function handle_level_collisions(self, normal, distance)
+
+	if distance > 0 then
+		local extent = vmath.project(self.correction, distance * normal)
+		if extent < 1 then
+			local compensation = (distance - distance * extent) * normal
+			go.set_position(go.get_position() + compensation)
+			self.correction = self.correction + compensation
+		end
+	end
+	if math.abs(normal.x) > 0 then
+		self.velocity.x = 0
+	end
+	if normal.y > 0 then
+		self.velocity.y = math.max(0, self.velocity.y)
+		self.velocity.x = 0
+	end
+	if normal.y < 0 then
+		self.velocity.y = math.min(0, self.velocity.y)
+	end
+end
+
+function init(self)
+	self.correction = vmath.vector3()
+	self.velocity = vmath.vector3(0)
+	self.gravity = 10
+	self.speed = 150
+	msg.post("#label", "disable")
+end
+
+function fixed_update(self, dt)
+	local pos = go.get_position()
+	if self.follow ~= nil then
+		local parent_pos = go.get_world_position(self.follow)
+		pos = vmath.lerp(0.2, pos, parent_pos)
+		go.set_position(pos)
+	else
+		self.velocity.y = self.velocity.y - self.gravity * dt
+		self.velocity.y = clamp(self.velocity.y, -2000, 2000)
+		pos = pos + self.velocity * self.speed * dt
+		go.set_position(pos)
+	end
+	self.correction.x = 0
+	self.correction.y = 0
+end
+
+function on_message(self, message_id, message, sender)
+	if message_id == hash("follow") then
+		msg.post("#co", "disable")
+		self.follow = message.parent
+		self.follow_dis = go.get_position() - go.get_position(sender)
+		self.follow_dis.y = self.follow_dis.y * (-1)
+	elseif message_id == hash("unfollow") then
+		self.velocity = message.velocity
+		msg.post("#co", "enable")
+		self.follow = nil
+	elseif message_id == hash("contact_point_response") and message.other_group ~= hash("player") then
+		handle_level_collisions(self, message.normal, message.distance)
+	elseif message_id == hash("show_key") then
+		msg.post("#label", "enable")
+	elseif message_id == hash("hide_key") then
+		msg.post("#label", "disable")
+	elseif message_id == hash("disable_co") then
+		msg.post("#co", "disable")
+	elseif message_id == hash("enable_co") then
+		msg.post("#co", "enable")
+	elseif message_id == hash("up") then
+		self.velocity.y = 4
+	end	
+end
