@@ -14,8 +14,10 @@ function on_message(self, message_id, message, sender)
 				go.set_position(go.get_position(game.blue), message.other_id)
 			end
 			-----------------------------------------
-			if game.blue_dir == game.orange_dir then
+			if game.blue_dir == 1 and game.orange_dir == 1 then
 				msg.post(message.other_id, "up")
+			elseif game.blue_dir == -1 and game.orange_dir == -1 then
+				msg.post(message.other_id, "down")
 			end
 			-----------------------------------------
 			msg.post(message.other_id, "enable_co")

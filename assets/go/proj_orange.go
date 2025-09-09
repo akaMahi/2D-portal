@@ -29,6 +29,8 @@ embedded_components {
   "restitution: 0.5\n"
   "group: \"proj\"\n"
   "mask: \"default\"\n"
+  "mask: \"white_wall\"\n"
+  "mask: \"black_wall\"\n"
   "embedded_collision_shape {\n"
   "  shapes {\n"
   "    shape_type: TYPE_SPHERE\n"

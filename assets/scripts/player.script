@@ -137,5 +137,7 @@ function on_message(self, message_id, message, sender)
 		msg.post("#co", "enable")
 	elseif message_id == hash("up") then
 		self.velocity.y = 4
+	elseif message_id == hash("down") then
+		self.velocity.y = -1
 	end	
 end

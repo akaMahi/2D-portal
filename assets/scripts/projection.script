@@ -34,15 +34,16 @@ function on_message(self, message_id, message, sender)
 	-- print(message_id)
 	-- pprint(message)
 	if message_id == hash("contact_point_response") and not self.portal then
+		if message.other_group == hash("black_wall") then
+			if self.color == 1 then game.blue = nil
+			else game.orange = nil end
+			go.delete()
+		end
 		self.velocity = vmath.vector3(0)
 		self.dir = message.normal.y
 		if self.dir ~= 0 then
 			if self.dir > 0 then self.dir = 1
 			else self.dir = -1 end
-		else
-			self.dir = message.normal.x
-			if self.dir > 0 then self.dir = 2
-			else self.dir = -2 end
 		end
 		if self.color == 1 then game.blue_dir = self.dir
 		else game.orange_dir = self.dir end
