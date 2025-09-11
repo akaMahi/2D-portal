@@ -3317,16 +3317,6 @@ layers {
     tile: 1
   }
   cell {
-    x: 28
-    y: 2
-    tile: 1
-  }
-  cell {
-    x: 29
-    y: 2
-    tile: 1
-  }
-  cell {
     x: 0
     y: 3
     tile: 1
@@ -3337,32 +3327,12 @@ layers {
     tile: 1
   }
   cell {
-    x: 28
-    y: 3
-    tile: 1
-  }
-  cell {
-    x: 29
-    y: 3
-    tile: 1
-  }
-  cell {
     x: 0
     y: 4
     tile: 1
   }
   cell {
     x: 1
-    y: 4
-    tile: 1
-  }
-  cell {
-    x: 28
-    y: 4
-    tile: 1
-  }
-  cell {
-    x: 29
     y: 4
     tile: 1
   }

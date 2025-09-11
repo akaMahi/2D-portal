@@ -7,11 +7,6 @@ embedded_instances {
   data: "components {\n"
   "  id: \"player\"\n"
   "  component: \"/assets/scripts/player.script\"\n"
-  "  properties {\n"
-  "    id: \"can_shoot\"\n"
-  "    value: \"false\"\n"
-  "    type: PROPERTY_TYPE_BOOLEAN\n"
-  "  }\n"
   "}\n"
   "embedded_components {\n"
   "  id: \"co\"\n"
@@ -182,10 +177,6 @@ embedded_instances {
   "  }\n"
   "}\n"
   ""
-  position {
-    x: 496.0
-    y: 382.0
-  }
 }
 embedded_instances {
   id: "go"

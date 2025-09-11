@@ -16,6 +16,7 @@ function on_message(self, message_id, message, sender)
 	elseif message_id == hash("proxy_unloaded") then
 		msg.post(proxies[current_lvl], "load")
 	elseif message_id == hash("next_lvl") then
+		print("next_level")
 		msg.post(proxies[current_lvl], "disable")
 		msg.post(proxies[current_lvl], "final")
 		msg.post(proxies[current_lvl], "unload")

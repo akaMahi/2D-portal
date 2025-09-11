@@ -200,62 +200,6 @@ nodes {
 }
 nodes {
   position {
-    x: -150.0
-    y: 150.0
-  }
-  size {
-    x: 200.0
-    y: 100.0
-  }
-  type: TYPE_BOX
-  id: "box2"
-  inherit_alpha: true
-  size_mode: SIZE_MODE_AUTO
-  visible: false
-}
-nodes {
-  position {
-    x: 400.0
-    y: 150.0
-  }
-  scale {
-    x: 3.0
-    y: 3.0
-  }
-  type: TYPE_BOX
-  texture: "props/e"
-  id: "box3"
-  parent: "box2"
-  inherit_alpha: true
-  size_mode: SIZE_MODE_AUTO
-}
-nodes {
-  position {
-    x: 530.0
-    y: 150.0
-  }
-  scale {
-    x: 0.5
-    y: 0.5
-  }
-  size {
-    x: 200.0
-    y: 100.0
-  }
-  color {
-    x: 0.0
-    y: 0.0
-    z: 0.0
-  }
-  type: TYPE_TEXT
-  text: "TO PICKUP"
-  font: "Rubik"
-  id: "pickup"
-  parent: "box2"
-  inherit_alpha: true
-}
-nodes {
-  position {
     x: 200.0
     y: 150.0
   }
