@@ -114,6 +114,8 @@ function on_input(self, action_id, action)
 	elseif action_id == hash("use") and action.pressed and self.holding ~= nil then
 		msg.post(self.holding, "unfollow", { velocity = vmath.vector3(self.velocity.x * 1.5, self.velocity.y, 0) })
 		self.holding = nil
+	elseif action_id == hash("reset") and action.pressed then
+		msg.post("lvlmanager:/manager", "reset_lvl")
 	elseif action_id == hash("l_click") and action.pressed and self.can_shoot then
 		game.tp = false
 		if game.blue then

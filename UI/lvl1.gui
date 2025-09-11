@@ -231,7 +231,7 @@ nodes {
 }
 nodes {
   position {
-    x: 565.0
+    x: 530.0
     y: 150.0
   }
   scale {
@@ -308,6 +308,62 @@ nodes {
   font: "Rubik"
   id: "look"
   parent: "box4"
+  inherit_alpha: true
+}
+nodes {
+  position {
+    x: 180.0
+    y: 150.0
+  }
+  size {
+    x: 200.0
+    y: 100.0
+  }
+  type: TYPE_BOX
+  id: "box6"
+  inherit_alpha: true
+  size_mode: SIZE_MODE_AUTO
+  visible: false
+}
+nodes {
+  position {
+    x: 400.0
+    y: 150.0
+  }
+  scale {
+    x: 3.0
+    y: 3.0
+  }
+  type: TYPE_BOX
+  texture: "props/r"
+  id: "box7"
+  parent: "box6"
+  inherit_alpha: true
+  size_mode: SIZE_MODE_AUTO
+}
+nodes {
+  position {
+    x: 530.0
+    y: 150.0
+  }
+  scale {
+    x: 0.5
+    y: 0.5
+  }
+  size {
+    x: 200.0
+    y: 100.0
+  }
+  color {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+  }
+  type: TYPE_TEXT
+  text: "TO RESET"
+  font: "Rubik"
+  id: "reset"
+  parent: "box6"
   inherit_alpha: true
 }
 material: "/builtins/materials/gui.material"

@@ -1,5 +1,5 @@
 [bootstrap]
-main_collection = /main/lvl1.collectionc
+main_collection = /main/lvlmanager.collectionc
 
 [script]
 shared_state = 1

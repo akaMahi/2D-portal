@@ -14,6 +14,10 @@ key_trigger {
   input: KEY_E
   action: "use"
 }
+key_trigger {
+  input: KEY_R
+  action: "reset"
+}
 mouse_trigger {
   input: MOUSE_BUTTON_LEFT
   action: "l_click"

@@ -1,11 +1,21 @@
 local game = require("assets.scripts.game")
 go.property("door", hash(""))
+
+function init(self)
+	self.objects = 0
+end
 function on_message(self, message_id, message, sender)
 	if message_id == hash("trigger_response") and message.own_group == hash("trigger") and message.enter then
-		msg.post(self.door, "open")
-		sprite.play_flipbook("#sprite", "on", function() end, {})
+		self.objects = self.objects + 1
+		if self.objects == 1 then
+			msg.post(self.door, "open")
+			sprite.play_flipbook("#sprite", "on", function() end, {})
+		end
 	elseif message_id == hash("trigger_response") and message.own_group == hash("trigger") and not message.enter then
-		msg.post(self.door, "close")
-		sprite.play_flipbook("#sprite", "off", function() end, {})
+		self.objects = self.objects - 1
+		if self.objects == 0 then
+			msg.post(self.door, "close")
+			sprite.play_flipbook("#sprite", "off", function() end, {})
+		end
 	end
 end

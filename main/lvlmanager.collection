@@ -1,0 +1,22 @@
+name: "lvlmanager"
+scale_along_z: 0
+embedded_instances {
+  id: "manager"
+  data: "components {\n"
+  "  id: \"lvlmanager\"\n"
+  "  component: \"/assets/scripts/lvlmanager.script\"\n"
+  "}\n"
+  "embedded_components {\n"
+  "  id: \"lvl1\"\n"
+  "  type: \"collectionproxy\"\n"
+  "  data: \"collection: \\\"/main/lvl1.collection\\\"\\n"
+  "\"\n"
+  "}\n"
+  "embedded_components {\n"
+  "  id: \"lvl2\"\n"
+  "  type: \"collectionproxy\"\n"
+  "  data: \"collection: \\\"/main/lvl2.collection\\\"\\n"
+  "\"\n"
+  "}\n"
+  ""
+}
