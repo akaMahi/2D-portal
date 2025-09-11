@@ -57,10 +57,10 @@ function fixed_update(self, dt)
 	end
 	self.velocity.x = self.right - self.left
 	self.velocity.x = self.velocity.x + self.xeffect
-	if self.current_anim == "idle" and self.velocity.x ~= 0 then
+	if self.current_anim == "idle" and self.velocity.x ~= 0 and self.on_ground > 0 then
 		self.current_anim = "walk"
 		sprite.play_flipbook("#sprite", "walk", function() end, {})
-	elseif self.current_anim == "walk" and self.velocity.x == 0 then
+	elseif self.current_anim == "walk" and (self.velocity.x == 0 or self.on_ground == 0) then
 		self.current_anim = "idle"
 		sprite.play_flipbook("#sprite", "idle", function() end, {})
 	end
