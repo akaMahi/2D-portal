@@ -5,7 +5,7 @@ components {
 embedded_components {
   id: "sprite"
   type: "sprite"
-  data: "default_animation: \"proj_blue\"\n"
+  data: "default_animation: \"portal_blue\"\n"
   "material: \"/builtins/materials/sprite.material\"\n"
   "textures {\n"
   "  sampler: \"texture_sampler\"\n"

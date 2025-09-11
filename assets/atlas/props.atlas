@@ -7,14 +7,76 @@ images {
 images {
   image: "/assets/props/proj_orange.png"
 }
+images {
+  image: "/assets/props/portal_blue.png"
+}
+images {
+  image: "/assets/props/portal_orange.png"
+}
+images {
+  image: "/assets/props/portal_gun.png"
+}
+images {
+  image: "/assets/cursor/portal_cursor_bl.png"
+}
+images {
+  image: "/assets/props/a.png"
+}
+images {
+  image: "/assets/props/d.png"
+}
+images {
+  image: "/assets/props/e.png"
+}
+images {
+  image: "/assets/props/l_click.png"
+}
+images {
+  image: "/assets/props/r.png"
+}
+images {
+  image: "/assets/props/r_click.png"
+}
+images {
+  image: "/assets/props/s.png"
+}
+images {
+  image: "/assets/props/space1.png"
+}
+images {
+  image: "/assets/props/space2.png"
+}
+images {
+  image: "/assets/props/space3.png"
+}
+images {
+  image: "/assets/props/w.png"
+}
+images {
+  image: "/assets/props/mouse.png"
+}
 animations {
-  id: "button"
+  id: "off"
   images {
     image: "/assets/props/button1.png"
   }
+}
+animations {
+  id: "on"
   images {
     image: "/assets/props/button2.png"
   }
-  playback: PLAYBACK_ONCE_BACKWARD
+}
+animations {
+  id: "open"
+  images {
+    image: "/assets/props/door2.png"
+  }
+}
+animations {
+  id: "close"
+  images {
+    image: "/assets/props/door1.png"
+  }
 }
 extrude_borders: 2

@@ -32,6 +32,7 @@ function init(self)
 	self.velocity = vmath.vector3(0)
 	self.gravity = 10
 	self.speed = 150
+	self.xeffect = 0
 	msg.post("#label", "disable")
 end
 
@@ -44,11 +45,19 @@ function fixed_update(self, dt)
 	else
 		self.velocity.y = self.velocity.y - self.gravity * dt
 		self.velocity.y = clamp(self.velocity.y, -2000, 2000)
+		self.velocity.x = self.velocity.x + self.xeffect
 		pos = pos + self.velocity * self.speed * dt
 		go.set_position(pos)
 	end
 	self.correction.x = 0
 	self.correction.y = 0
+	if self.xeffect > 0 then
+		self.xeffect = self.xeffect - 5 * dt
+		self.xeffect = math.max(self.xeffect, 0)
+	elseif self.xeffect < 0 then
+		self.xeffect = self.xeffect + 5 * dt
+		self.xeffect = math.min(self.xeffect, 0)
+	end
 end
 
 function on_message(self, message_id, message, sender)
@@ -75,5 +84,11 @@ function on_message(self, message_id, message, sender)
 		self.velocity.y = 4
 	elseif message_id == hash("down") then
 		self.velocity.y = -1
-	end	
+	elseif message_id == hash("right") then
+		self.xeffect = 0.5
+		self.velocity.y = 2
+	elseif message_id == hash("left") then
+		self.xeffect = -0.5
+		self.velocity.y = 2
+	end
 end

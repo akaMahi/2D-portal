@@ -1,6 +1,14 @@
 local game = require("assets.scripts.game")
 go.property("color", 0)
 
+function init(self)
+	if self.color == 1 then
+		go.animate(".", "euler.z", go.PLAYBACK_LOOP_FORWARD, 360, go.EASING_LINEAR, 30, 0, function() end)
+	else
+		go.animate(".", "euler.z", go.PLAYBACK_LOOP_FORWARD, -360, go.EASING_LINEAR, 30, 0, function() end)
+	end
+end
+
 function on_message(self, message_id, message, sender)
 	if message_id == hash("trigger_response") and message.enter and not game.tp then
 		if game.blue and game.orange then
@@ -13,13 +21,27 @@ function on_message(self, message_id, message, sender)
 				game.portal_color = 2
 				go.set_position(go.get_position(game.blue), message.other_id)
 			end
-			-----------------------------------------
-			if game.blue_dir == 1 and game.orange_dir == 1 then
-				msg.post(message.other_id, "up")
-			elseif game.blue_dir == -1 and game.orange_dir == -1 then
-				msg.post(message.other_id, "down")
+			if self.color == 1 then
+				if game.orange_dir == 1 then
+					msg.post(message.other_id, "up")
+				elseif game.orange_dir == -1 then
+					msg.post(message.other_id, "down")
+				elseif game.orange_dir == 2 then
+					msg.post(message.other_id, "right")
+				else
+					msg.post(message.other_id, "left")
+				end
+			else
+				if game.blue_dir == 1 then
+					msg.post(message.other_id, "up")
+				elseif game.blue_dir == -1 then
+					msg.post(message.other_id, "down")
+				elseif game.blue_dir == 2 then
+					msg.post(message.other_id, "right")
+				else
+					msg.post(message.other_id, "left")
+				end
 			end
-			-----------------------------------------
 			msg.post(message.other_id, "enable_co")
 		end
 	elseif message_id == hash("trigger_response") and not message.enter and game.tp then
