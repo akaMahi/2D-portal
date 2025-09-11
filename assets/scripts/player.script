@@ -58,7 +58,6 @@ function fixed_update(self, dt)
 	self.velocity.y = clamp(self.velocity.y, -2000, 2000)
 	if self.on_ground > 0 then
 		self.velocity.y = math.max(0, self.velocity.y)
-		--self.xeffect = 0
 	end
 	if self.pushing_ceiling > 0 then
 		self.velocity.y = math.min(0, self.velocity.y)

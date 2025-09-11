@@ -50,12 +50,16 @@ embedded_components {
   "  z: 0.0\n"
   "}\n"
   "text: \"E\"\n"
-  "font: \"/builtins/fonts/default.font\"\n"
+  "font: \"/assets/fonts/Rubik.font\"\n"
   "material: \"/builtins/fonts/label-df.material\"\n"
   ""
   position {
-    y: 33.0
+    y: 30.0
     z: 0.1
+  }
+  scale {
+    x: 0.2
+    y: 0.2
   }
 }
 embedded_components {
