@@ -1,0 +1,10 @@
+function init(self)
+	go.animate(".", "euler.z", go.PLAYBACK_LOOP_FORWARD, -360, go.EASING_LINEAR, 10, 0, function () end)
+end
+
+function on_message(self, message_id, message, sender)
+	if message_id == hash("trigger_response") then
+		msg.post("/level", "orb")
+		go.delete()
+	end
+end

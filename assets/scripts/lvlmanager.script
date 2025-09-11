@@ -1,12 +1,21 @@
 local proxies = {
+	"#menu",
 	"#lvl1",
 	"#lvl2",
+	"#lvl3",
+	"#lvl4",
+	"#lvl5",
+	"#lvl6",
+	"#lvl7",
+	"#lvl8",
+	"#lvl9",
+	"#lvl10",
 }
-local current_lvl = 1
+local current_lvl = 2
 
 function init(self)
 	msg.post(".", "acquire_input_focus")
-	msg.post(proxies[1], "load")
+	msg.post(proxies[current_lvl], "load")
 end
 
 function on_message(self, message_id, message, sender)

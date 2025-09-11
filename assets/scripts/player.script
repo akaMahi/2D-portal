@@ -169,5 +169,7 @@ function on_message(self, message_id, message, sender)
 	elseif message_id == hash("left") then
 		self.xeffect = -2
 		self.velocity.y = 2
+	elseif message_id == hash("can_shoot") then
+		self.can_shoot = true
 	end
 end

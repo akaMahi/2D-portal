@@ -1,0 +1,30 @@
+function init(self)
+	sound.play("#s1", {}, function ()
+		sound.play("#s2", {}, function () end)
+	end)
+end
+
+function on_message(self, message_id, message, sender)
+	if message_id == hash("orb") then
+		sound.stop("#s2", {})
+		msg.post("/player/player", "can_shoot")
+		msg.post("/door", "open")
+		sound.play("#s3", {}, function ()
+			sound.play("#s4", {}, function ()
+				sound.play("#s5", {}, function ()
+					sound.play("#s6", {}, function ()
+						sound.play("#s7", {}, function ()
+							sound.play("#s8", {}, function ()
+								sound.play("#s9", {}, function ()
+									sound.play("#s10", {}, function ()
+
+									end)
+								end)
+							end)
+						end)
+					end)
+				end)
+			end)
+		end)
+	end
+end

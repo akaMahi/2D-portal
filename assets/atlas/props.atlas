@@ -55,6 +55,9 @@ images {
 images {
   image: "/assets/props/mouse.png"
 }
+images {
+  image: "/assets/props/orb.png"
+}
 animations {
   id: "off"
   images {

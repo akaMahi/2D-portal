@@ -1,0 +1,17 @@
+name: "menu"
+scale_along_z: 0
+embedded_instances {
+  id: "gui"
+  data: "components {\n"
+  "  id: \"menu\"\n"
+  "  component: \"/UI/menu.gui\"\n"
+  "}\n"
+  "embedded_components {\n"
+  "  id: \"theme\"\n"
+  "  type: \"sound\"\n"
+  "  data: \"sound: \\\"/assets/SFX/Portal Radio Tune - Wolfie.wav\\\"\\n"
+  "looping: 1\\n"
+  "\"\n"
+  "}\n"
+  ""
+}
