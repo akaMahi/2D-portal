@@ -6,6 +6,7 @@ end
 
 function on_message(self, message_id, message, sender)
 	if message_id == hash("orb") then
+		sound.stop("#s1", {})
 		sound.stop("#s2", {})
 		msg.post("/player/player", "can_shoot")
 		msg.post("/door", "open")

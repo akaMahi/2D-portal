@@ -23,6 +23,14 @@ end
 
 function init(self)
 	msg.post("#", "acquire_input_focus")
+	-------------------------------------
+	game.blue = nil
+	game.blue_dir = 0
+	game.orange = nil
+	game.orange_dir = 0
+	game.tp = false
+	game.portal_color = 0
+	-------------------------------------
 	defos.set_cursor_visible(false)
 	self.velocity = vmath.vector3(0, 0, 0)
 	self.on_ground = 0
