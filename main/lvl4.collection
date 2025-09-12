@@ -198,3 +198,11 @@ embedded_instances {
     y: 2.0
   }
 }
+embedded_instances {
+  id: "gui"
+  data: "components {\n"
+  "  id: \"lvl4\"\n"
+  "  component: \"/UI/lvl4.gui\"\n"
+  "}\n"
+  ""
+}

@@ -1,0 +1,4 @@
+function init(self)
+	gui.animate(gui.get_node("intro"), "color", vmath.vector4(1, 1, 1, 0), gui.EASING_LINEAR, 1, 0.1, function()
+	end, gui.PLAYBACK_ONCE_FORWARD)
+end

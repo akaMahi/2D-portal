@@ -1,11 +1,13 @@
 function init(self)
+	self.orb = false
 	sound.play("#s1", {}, function ()
 		sound.play("#s2", {}, function () end)
 	end)
 end
 
 function on_message(self, message_id, message, sender)
-	if message_id == hash("orb") then
+	if message_id == hash("orb") and not self.orb then
+		self.orb = true
 		sound.stop("#s1", {})
 		sound.stop("#s2", {})
 		msg.post("/player/player", "can_shoot")
