@@ -17,6 +17,11 @@ convex_hulls {
   count: 4
   collision_group: "black_wall"
 }
+convex_hulls {
+  index: 12
+  count: 4
+  collision_group: ""
+}
 collision_groups: "black_wall"
 collision_groups: "white_wall"
 extrude_borders: 2
