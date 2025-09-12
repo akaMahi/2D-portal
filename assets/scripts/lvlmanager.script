@@ -32,7 +32,6 @@ function on_message(self, message_id, message, sender)
 		msg.post(proxies[current_lvl], "unload")
 		current_lvl = current_lvl + 1
 	elseif message_id == hash("reset_lvl") then
-		game.death = 0
 		msg.post(proxies[current_lvl], "disable")
 		msg.post(proxies[current_lvl], "final")
 		msg.post(proxies[current_lvl], "unload")
