@@ -51,6 +51,7 @@ function init(self)
 	self.xeffect = 0
 	self.right = 0
 	self.left = 0
+	self.dead = false
 end
 
 function fixed_update(self, dt)
@@ -160,6 +161,10 @@ function on_message(self, message_id, message, sender)
 			msg.post(self.near_box, "hide_key")
 			self.near_box = nil
 		end
+	elseif message_id == hash("contact_point_response") and message.other_group == hash("lava") and not self.dead then
+		self.dead = true
+		game.death = game.death + 1
+		msg.post("lvlmanager:/manager", "reset_lvl")
 	elseif message_id == hash("contact_point_response") then
 		handle_level_collisions(self, message.normal, message.distance)
 	elseif message_id == hash("disable_co") then

@@ -42,5 +42,11 @@ embedded_instances {
   "  data: \"collection: \\\"/main/lvl4.collection\\\"\\n"
   "\"\n"
   "}\n"
+  "embedded_components {\n"
+  "  id: \"lvl5\"\n"
+  "  type: \"collectionproxy\"\n"
+  "  data: \"collection: \\\"/main/lvl5.collection\\\"\\n"
+  "\"\n"
+  "}\n"
   ""
 }

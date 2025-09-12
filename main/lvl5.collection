@@ -1,0 +1,228 @@
+name: "lvl5"
+instances {
+  id: "door"
+  prototype: "/assets/go/door.go"
+  position {
+    x: 944.0
+    y: 400.0
+  }
+  component_properties {
+    id: "door"
+    properties {
+      id: "buttons"
+      value: "2.0"
+      type: PROPERTY_TYPE_NUMBER
+    }
+    properties {
+      id: "sp"
+      value: "0.0, 400.0, 0.0"
+      type: PROPERTY_TYPE_VECTOR3
+    }
+    properties {
+      id: "fp"
+      value: "0.0, 496.0, 0.0"
+      type: PROPERTY_TYPE_VECTOR3
+    }
+  }
+}
+instances {
+  id: "end"
+  prototype: "/assets/go/end.go"
+  position {
+    x: 976.0
+    y: 365.0
+  }
+}
+instances {
+  id: "button"
+  prototype: "/assets/go/button.go"
+  position {
+    x: 864.0
+    y: 384.0
+  }
+}
+instances {
+  id: "button1"
+  prototype: "/assets/go/button.go"
+  position {
+    x: 480.0
+    y: 160.0
+  }
+}
+instances {
+  id: "box"
+  prototype: "/assets/go/box.go"
+  position {
+    x: 794.0
+    y: 552.0
+  }
+}
+collection_instances {
+  id: "player"
+  collection: "/assets/go/player.collection"
+  position {
+    x: 880.0
+    y: 547.0
+  }
+  instance_properties {
+    id: "player"
+    properties {
+      id: "player"
+      properties {
+        id: "can_shoot"
+        value: "true"
+        type: PROPERTY_TYPE_BOOLEAN
+      }
+    }
+  }
+}
+scale_along_z: 0
+embedded_instances {
+  id: "level"
+  data: "components {\n"
+  "  id: \"lvl1\"\n"
+  "  component: \"/assets/tilemap/lvl5.tilemap\"\n"
+  "}\n"
+  "components {\n"
+  "  id: \"lvl5\"\n"
+  "  component: \"/assets/scripts/lvl5.script\"\n"
+  "}\n"
+  "embedded_components {\n"
+  "  id: \"white_wall\"\n"
+  "  type: \"collisionobject\"\n"
+  "  data: \"collision_shape: \\\"/assets/tilemap/lvl5.tilemap\\\"\\n"
+  "type: COLLISION_OBJECT_TYPE_STATIC\\n"
+  "mass: 0.0\\n"
+  "friction: 0.1\\n"
+  "restitution: 0.5\\n"
+  "group: \\\"white_wall\\\"\\n"
+  "mask: \\\"default\\\"\\n"
+  "mask: \\\"player\\\"\\n"
+  "mask: \\\"box\\\"\\n"
+  "mask: \\\"feet\\\"\\n"
+  "mask: \\\"head\\\"\\n"
+  "mask: \\\"proj\\\"\\n"
+  "\"\n"
+  "}\n"
+  "embedded_components {\n"
+  "  id: \"black_wall\"\n"
+  "  type: \"collisionobject\"\n"
+  "  data: \"collision_shape: \\\"/assets/tilemap/lvl5.tilemap\\\"\\n"
+  "type: COLLISION_OBJECT_TYPE_STATIC\\n"
+  "mass: 0.0\\n"
+  "friction: 0.1\\n"
+  "restitution: 0.5\\n"
+  "group: \\\"black_wall\\\"\\n"
+  "mask: \\\"default\\\"\\n"
+  "mask: \\\"player\\\"\\n"
+  "mask: \\\"box\\\"\\n"
+  "mask: \\\"feet\\\"\\n"
+  "mask: \\\"head\\\"\\n"
+  "mask: \\\"proj\\\"\\n"
+  "\"\n"
+  "}\n"
+  "embedded_components {\n"
+  "  id: \"s\"\n"
+  "  type: \"sound\"\n"
+  "  data: \"sound: \\\"/assets/SFX/lvl1/00_part1_entry-3.wav\\\"\\n"
+  "\"\n"
+  "}\n"
+  "embedded_components {\n"
+  "  id: \"lava\"\n"
+  "  type: \"collisionobject\"\n"
+  "  data: \"collision_shape: \\\"/assets/tilemap/lvl5.tilemap\\\"\\n"
+  "type: COLLISION_OBJECT_TYPE_STATIC\\n"
+  "mass: 0.0\\n"
+  "friction: 0.1\\n"
+  "restitution: 0.5\\n"
+  "group: \\\"lava\\\"\\n"
+  "mask: \\\"default\\\"\\n"
+  "mask: \\\"player\\\"\\n"
+  "mask: \\\"box\\\"\\n"
+  "mask: \\\"feet\\\"\\n"
+  "mask: \\\"head\\\"\\n"
+  "mask: \\\"proj\\\"\\n"
+  "\"\n"
+  "}\n"
+  "embedded_components {\n"
+  "  id: \"s1\"\n"
+  "  type: \"sound\"\n"
+  "  data: \"sound: \\\"/assets/SFX/lvl5/04_part1_entry-1.wav\\\"\\n"
+  "\"\n"
+  "}\n"
+  "embedded_components {\n"
+  "  id: \"s2\"\n"
+  "  type: \"sound\"\n"
+  "  data: \"sound: \\\"/assets/SFX/lvl5/02_part2_success-1.wav\\\"\\n"
+  "\"\n"
+  "}\n"
+  "embedded_components {\n"
+  "  id: \"s3\"\n"
+  "  type: \"sound\"\n"
+  "  data: \"sound: \\\"/assets/SFX/lvl5/02_part2_success-2.wav\\\"\\n"
+  "\"\n"
+  "}\n"
+  ""
+}
+embedded_instances {
+  id: "cursor"
+  data: "embedded_components {\n"
+  "  id: \"blue\"\n"
+  "  type: \"sprite\"\n"
+  "  data: \"default_animation: \\\"portal_cursor_bl\\\"\\n"
+  "material: \\\"/builtins/materials/sprite.material\\\"\\n"
+  "textures {\\n"
+  "  sampler: \\\"texture_sampler\\\"\\n"
+  "  texture: \\\"/assets/atlas/cursor.atlas\\\"\\n"
+  "}\\n"
+  "\"\n"
+  "  position {\n"
+  "    z: 0.5\n"
+  "  }\n"
+  "}\n"
+  "embedded_components {\n"
+  "  id: \"orange\"\n"
+  "  type: \"sprite\"\n"
+  "  data: \"default_animation: \\\"portal_cursor_rng\\\"\\n"
+  "material: \\\"/builtins/materials/sprite.material\\\"\\n"
+  "textures {\\n"
+  "  sampler: \\\"texture_sampler\\\"\\n"
+  "  texture: \\\"/assets/atlas/cursor.atlas\\\"\\n"
+  "}\\n"
+  "\"\n"
+  "  position {\n"
+  "    z: 0.5\n"
+  "  }\n"
+  "}\n"
+  "embedded_components {\n"
+  "  id: \"center\"\n"
+  "  type: \"sprite\"\n"
+  "  data: \"default_animation: \\\"portal_cursor_cnt\\\"\\n"
+  "material: \\\"/builtins/materials/sprite.material\\\"\\n"
+  "textures {\\n"
+  "  sampler: \\\"texture_sampler\\\"\\n"
+  "  texture: \\\"/assets/atlas/cursor.atlas\\\"\\n"
+  "}\\n"
+  "\"\n"
+  "  position {\n"
+  "    z: 0.5\n"
+  "  }\n"
+  "}\n"
+  ""
+  position {
+    x: 172.0
+    y: 255.0
+  }
+  scale3 {
+    x: 2.0
+    y: 2.0
+  }
+}
+embedded_instances {
+  id: "gui"
+  data: "components {\n"
+  "  id: \"lvl4\"\n"
+  "  component: \"/UI/lvl4.gui\"\n"
+  "}\n"
+  ""
+}

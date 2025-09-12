@@ -5,7 +5,7 @@ go.property("color", 0)
 -- 1: blue/ 2: orange
 
 function init(self)
-	self.speed = 500
+	self.speed = 1000
 	self.dir = 0
 	-- 1: up, 2: right, 3: down, 4: left
 end

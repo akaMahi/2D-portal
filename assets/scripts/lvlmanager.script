@@ -1,3 +1,4 @@
+local game = require("assets.scripts.game")
 local proxies = {
 	"#menu",
 	"#lvl1",
@@ -11,7 +12,7 @@ local proxies = {
 	"#lvl9",
 	"#lvl10",
 }
-local current_lvl = 4
+local current_lvl = 2
 
 function init(self)
 	msg.post(".", "acquire_input_focus")
@@ -25,11 +26,13 @@ function on_message(self, message_id, message, sender)
 	elseif message_id == hash("proxy_unloaded") then
 		msg.post(proxies[current_lvl], "load")
 	elseif message_id == hash("next_lvl") then
+		game.death = 0
 		msg.post(proxies[current_lvl], "disable")
 		msg.post(proxies[current_lvl], "final")
 		msg.post(proxies[current_lvl], "unload")
 		current_lvl = current_lvl + 1
 	elseif message_id == hash("reset_lvl") then
+		game.death = 0
 		msg.post(proxies[current_lvl], "disable")
 		msg.post(proxies[current_lvl], "final")
 		msg.post(proxies[current_lvl], "unload")

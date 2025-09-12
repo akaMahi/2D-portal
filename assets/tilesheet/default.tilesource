@@ -14,14 +14,15 @@ convex_hulls {
 }
 convex_hulls {
   index: 8
-  count: 4
+  count: 5
   collision_group: "black_wall"
 }
 convex_hulls {
-  index: 12
+  index: 13
   count: 4
-  collision_group: ""
+  collision_group: "lava"
 }
 collision_groups: "black_wall"
+collision_groups: "lava"
 collision_groups: "white_wall"
 extrude_borders: 2

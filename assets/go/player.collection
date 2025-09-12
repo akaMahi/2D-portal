@@ -22,6 +22,7 @@ embedded_instances {
   "mask: \\\"op\\\"\\n"
   "mask: \\\"white_wall\\\"\\n"
   "mask: \\\"black_wall\\\"\\n"
+  "mask: \\\"lava\\\"\\n"
   "embedded_collision_shape {\\n"
   "  shapes {\\n"
   "    shape_type: TYPE_BOX\\n"

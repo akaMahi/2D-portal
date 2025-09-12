@@ -10,6 +10,7 @@ function on_message(self, message_id, message, sender)
 	end
 	if self.buttons == 0 and not open then
 		open = true
+		msg.post("/level", "door_open")
 		sprite.play_flipbook("#sprite", "open", function() 
 			go.animate(".", "position.y", go.PLAYBACK_ONCE_FORWARD, self.fp.y, go.EASING_LINEAR, 2, 0, function() end)
 		end, {})
