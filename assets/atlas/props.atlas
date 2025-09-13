@@ -64,6 +64,9 @@ images {
 images {
   image: "/assets/props/energy.png"
 }
+images {
+  image: "/assets/props/lava.png"
+}
 animations {
   id: "off"
   images {

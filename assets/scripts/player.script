@@ -187,5 +187,11 @@ function on_message(self, message_id, message, sender)
 		self.velocity.y = 2
 	elseif message_id == hash("can_shoot") then
 		self.can_shoot = true
+	elseif message_id == hash("end") then
+		go.delete("/cursor")
+		msg.post("#co", "disable")
+		self.gravity = 0
+		defos.set_cursor_visible(true)
+		msg.post("#", "release_input_focus")
 	end
 end

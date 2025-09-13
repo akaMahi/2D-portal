@@ -8,9 +8,6 @@ local proxies = {
 	"#lvl5",
 	"#lvl6",
 	"#lvl7",
-	"#lvl8",
-	"#lvl9",
-	"#lvl10",
 }
 local current_lvl = 1
 

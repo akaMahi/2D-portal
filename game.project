@@ -27,3 +27,6 @@ default_texture_mag_filter = nearest
 [physics]
 use_fixed_timestep = 1
 
+[collection_proxy]
+max_count = 10
+
