@@ -1,0 +1,30 @@
+images {
+  image: "/assets/props/menu.png"
+}
+animations {
+  id: "flame"
+  images {
+    image: "/assets/props/flame1.png"
+  }
+  images {
+    image: "/assets/props/flame2.png"
+  }
+  images {
+    image: "/assets/props/flame3.png"
+  }
+  images {
+    image: "/assets/props/flame2.png"
+  }
+  images {
+    image: "/assets/props/flame3.png"
+  }
+  images {
+    image: "/assets/props/flame1.png"
+  }
+  images {
+    image: "/assets/props/flame3.png"
+  }
+  playback: PLAYBACK_LOOP_PINGPONG
+  fps: 1
+}
+extrude_borders: 2

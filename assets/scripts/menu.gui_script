@@ -1,3 +1,18 @@
 function init(self)
+	msg.post("#", "acquire_input_focus")
+	self.play_node = gui.get_node("play")
 	sound.play("/gui#theme", {}, function() end)
+end
+
+function on_input(self, action_id, action)
+	if action_id == hash("l_click") and action.pressed then
+		if gui.pick_node(self.play_node, action.screen_x / window.get_display_scale(), action.screen_y / window.get_display_scale()) then
+			msg.post("#", "release_input_focus")
+			msg.post("lvlmanager:/manager", "next_lvl")
+		end
+	elseif gui.pick_node(self.play_node, action.screen_x / window.get_display_scale(), action.screen_y / window.get_display_scale()) then
+		gui.set_color(gui.get_node("text1"), vmath.vector4(95/255, 205/255, 228/255, 1))
+	else
+		gui.set_color(gui.get_node("text1"), vmath.vector4(1, 1, 1, 1))
+	end
 end

@@ -1,3 +1,65 @@
 script: "/assets/scripts/menu.gui_script"
+fonts {
+  name: "Rubik"
+  font: "/assets/fonts/Rubik.font"
+}
+fonts {
+  name: "default"
+  font: "/builtins/fonts/default.font"
+}
+nodes {
+  position {
+    x: 130.0
+    y: 300.0
+  }
+  scale {
+    x: 0.5
+    y: 0.5
+  }
+  size {
+    x: 200.0
+    y: 100.0
+  }
+  type: TYPE_BOX
+  id: "play"
+  inherit_alpha: true
+  size_mode: SIZE_MODE_AUTO
+  visible: false
+}
+nodes {
+  position {
+    z: 0.2
+  }
+  size {
+    x: 200.0
+    y: 100.0
+  }
+  type: TYPE_TEXT
+  text: "Play"
+  font: "Rubik"
+  id: "text1"
+  parent: "play"
+  inherit_alpha: true
+}
+nodes {
+  position {
+    x: 130.0
+    y: 400.0
+    z: 0.2
+  }
+  scale {
+    x: 0.8
+    y: 0.8
+  }
+  size {
+    x: 200.0
+    y: 100.0
+  }
+  type: TYPE_TEXT
+  text: "2D Portal"
+  font: "Rubik"
+  id: "text"
+  inherit_alpha: true
+}
 material: "/builtins/materials/gui.material"
 adjust_reference: ADJUST_REFERENCE_PARENT
