@@ -30,6 +30,7 @@ embedded_components {
   "group: \"op\"\n"
   "mask: \"player\"\n"
   "mask: \"box\"\n"
+  "mask: \"lava\"\n"
   "embedded_collision_shape {\n"
   "  shapes {\n"
   "    shape_type: TYPE_SPHERE\n"

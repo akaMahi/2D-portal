@@ -1,0 +1,42 @@
+function init(self)
+	sound.play("#s", {}, nil)
+	go.animate(".", "euler.z", go.PLAYBACK_LOOP_FORWARD, -360, go.EASING_LINEAR, 1, 0, nil)
+	self.velocity = vmath.vector3()
+	self.owner = nil
+	self.speed = 500
+end
+function update(self, dt)
+	local pos = go.get_position()
+	pos = pos + self.velocity * self.speed * dt
+	go.set_position(pos)
+
+	if pos.x < 0 or pos.x > 960 or pos.y < 0 or pos.y > 640 then
+		go.delete()
+	end
+end
+
+function final(self)
+	msg.post(self.owner, "ball_died")
+end
+
+function on_message(self, message_id, message, sender)
+	if message_id == hash("hello") then
+		self.owner = sender
+	elseif message_id == hash("right") then
+		self.velocity = vmath.vector3()
+		self.velocity.x = 1
+	elseif message_id == hash("left") then
+		self.velocity = vmath.vector3()
+		self.velocity.x = -1
+	elseif message_id == hash("up") then
+		self.velocity = vmath.vector3()
+		self.velocity.y = 1
+	elseif message_id == hash("down") then
+		self.velocity = vmath.vector3()
+		self.velocity.y = -1
+	elseif message_id == hash("disable_co") then
+		msg.post("#co", "disable")
+	elseif message_id == hash("enable_co") then
+		msg.post("#co", "enable")
+	end
+end

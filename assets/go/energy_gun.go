@@ -1,11 +1,11 @@
 components {
-  id: "portal"
-  component: "/assets/scripts/portal.script"
+  id: "energy_gun"
+  component: "/assets/scripts/energy_gun.script"
 }
 embedded_components {
   id: "sprite"
   type: "sprite"
-  data: "default_animation: \"portal_blue\"\n"
+  data: "default_animation: \"energy_gun\"\n"
   "material: \"/builtins/materials/sprite.material\"\n"
   "textures {\n"
   "  sampler: \"texture_sampler\"\n"
@@ -15,33 +15,41 @@ embedded_components {
   position {
     z: 0.1
   }
-  scale {
-    x: 2.0
-    y: 2.0
-  }
 }
 embedded_components {
-  id: "co"
+  id: "collisionobject"
   type: "collisionobject"
-  data: "type: COLLISION_OBJECT_TYPE_TRIGGER\n"
+  data: "type: COLLISION_OBJECT_TYPE_STATIC\n"
   "mass: 0.0\n"
   "friction: 0.1\n"
   "restitution: 0.5\n"
-  "group: \"bp\"\n"
+  "group: \"lava\"\n"
+  "mask: \"default\"\n"
   "mask: \"player\"\n"
   "mask: \"box\"\n"
-  "mask: \"lava\"\n"
+  "mask: \"feet\"\n"
+  "mask: \"head\"\n"
+  "mask: \"proj\"\n"
   "embedded_collision_shape {\n"
   "  shapes {\n"
-  "    shape_type: TYPE_SPHERE\n"
+  "    shape_type: TYPE_BOX\n"
   "    position {\n"
+  "      y: -12.0\n"
   "    }\n"
   "    rotation {\n"
   "    }\n"
   "    index: 0\n"
-  "    count: 1\n"
+  "    count: 3\n"
   "  }\n"
-  "  data: 30.0\n"
+  "  data: 31.7327\n"
+  "  data: 19.855562\n"
+  "  data: 10.0\n"
   "}\n"
+  ""
+}
+embedded_components {
+  id: "fac"
+  type: "factory"
+  data: "prototype: \"/assets/go/energy.go\"\n"
   ""
 }

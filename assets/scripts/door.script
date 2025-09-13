@@ -23,5 +23,7 @@ function on_message(self, message_id, message, sender)
 		sprite.play_flipbook("#sprite", "close", function() 
 			go.animate(".", "position.y", go.PLAYBACK_ONCE_FORWARD, self.sp.y, go.EASING_LINEAR, 1, 0, function() end)
 		end, {})
+	elseif message_id == hash("contact_point_response") and message.other_group == hash("lava") and not open then
+		msg.post("#", "open")
 	end
 end

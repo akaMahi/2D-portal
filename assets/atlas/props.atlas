@@ -58,6 +58,12 @@ images {
 images {
   image: "/assets/props/orb.png"
 }
+images {
+  image: "/assets/props/energy_gun.png"
+}
+images {
+  image: "/assets/props/energy.png"
+}
 animations {
   id: "off"
   images {

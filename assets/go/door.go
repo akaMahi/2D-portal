@@ -26,6 +26,7 @@ embedded_components {
   "mask: \"feet\"\n"
   "mask: \"head\"\n"
   "mask: \"proj\"\n"
+  "mask: \"lava\"\n"
   "embedded_collision_shape {\n"
   "  shapes {\n"
   "    shape_type: TYPE_BOX\n"

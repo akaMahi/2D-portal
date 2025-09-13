@@ -1,0 +1,19 @@
+go.property("dir", hash(""))
+
+local function spawn(self)
+	self.timer = timer.delay(2, false, function ()
+		self.ball = factory.create("#fac", go.get_position(), nil, { owner = msg.url() }, vmath.vector3(1))
+		msg.post(self.ball, "hello")
+		msg.post(self.ball, self.dir)
+	end)
+end
+
+function init(self)
+	spawn(self)
+end
+
+function on_message(self, message_id, message, sender)
+	if message_id == hash("ball_died") then
+		spawn(self)
+	end
+end
