@@ -32,7 +32,7 @@ end
 
 function on_message(self, message_id, message, sender)
 	if message_id == hash("contact_point_response") and not self.portal then
-		if message.other_group == hash("black_wall") then
+		if message.other_group ~= hash("white_wall") then
 			if self.color == 1 then game.blue = nil
 			else game.orange = nil end
 			go.delete()

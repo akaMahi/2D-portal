@@ -60,3 +60,17 @@ embedded_components {
     z: 0.1
   }
 }
+embedded_components {
+  id: "s"
+  type: "sound"
+  data: "sound: \"/assets/SFX/door_open.wav\"\n"
+  "speed: 0.6\n"
+  ""
+}
+embedded_components {
+  id: "s1"
+  type: "sound"
+  data: "sound: \"/assets/SFX/door_closed.wav\"\n"
+  "speed: 0.6\n"
+  ""
+}

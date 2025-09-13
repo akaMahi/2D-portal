@@ -1,11 +1,13 @@
 function init(self)
+	self.sound = false
 	sound.play("#s1", {}, function ()
 		sound.play("#s2", {}, function() end)
 	end)
 end
 
 function on_message(self, message_id, message, sender)
-	if message_id == hash("box_in") then
+	if message_id == hash("box_in") and not self.sound then
+		self.sound = true
 		sound.stop("#s1", {})
 		sound.stop("#s2", {})
 		sound.play("#s3", {}, function ()
