@@ -67,6 +67,9 @@ images {
 images {
   image: "/assets/props/lava.png"
 }
+images {
+  image: "/assets/props/GLaDOS.png"
+}
 animations {
   id: "off"
   images {
@@ -90,5 +93,16 @@ animations {
   images {
     image: "/assets/props/door1.png"
   }
+}
+animations {
+  id: "flicker"
+  images {
+    image: "/assets/props/door1.png"
+  }
+  images {
+    image: "/assets/props/door2.png"
+  }
+  playback: PLAYBACK_LOOP_FORWARD
+  fps: 15
 }
 extrude_borders: 2

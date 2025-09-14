@@ -1,0 +1,8 @@
+function init(self)
+	sound.play("#s1", {}, function ()
+		sound.play("#s2", {}, function ()
+			sound.play("#s3", {}, function ()
+			end)
+		end)
+	end)
+end

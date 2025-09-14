@@ -1,0 +1,10 @@
+function init(self)
+	sound.play("#s", {}, function ()
+		msg.post("/player/player", "end")
+		timer.delay(1, false, function ()
+			--tilemap.set_visible("/level#lvl", "Tile Layer 1", false)
+			go.animate("/lava", "position.y", go.PLAYBACK_ONCE_FORWARD, 320, go.EASING_LINEAR, 170, 0, nil)
+			sound.play("#s1", {}, nil)
+		end)
+	end)
+end
